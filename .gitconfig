@@ -1,0 +1,30 @@
+[user]
+	name = Kris Lamb
+	email = kris.lamb@dejero.com
+[diff]
+	tool = meld
+[alias]
+	st = status -sb -uall
+	cm = commit
+	br = branch
+	co = checkout
+	lg = log -p
+	lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	in = ! git fetch && git log --pretty=short HEAD..origin
+	out = log --pretty=short origin..HEAD
+	unstage = reset HEAD
+	undo = reset --soft HEAD^
+	credit = commit --amend --author "$1 <$2>" -C HEAD
+	amend = commit --amend
+	pushb = push -u origin
+	cob = checkout -b
+        master = checkout master
+        meld = difftool master HEAD --dir-diff
+[push]
+	default = simple
+[credential]
+	helper = cache
+
+[gitreview]
+	remote = origin
+	username = kris.lamb
